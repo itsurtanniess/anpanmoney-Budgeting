@@ -1,6 +1,8 @@
-import React, {useRef} from 'react'
+import React, {useRef, useState} from 'react'
 import {Form, Button, Card} from 'react-bootstrap'
 import img1 from "./images/logo.png";
+import {useAuth} from '../context/AuthContext'
+import { Link, useHistory } from 'react-router-dom'
 
 export default function Signup() {
     const usernameRef = useRef()
@@ -9,6 +11,21 @@ export default function Signup() {
     const occupationRef = useRef()
     const purchasefRef = useRef()
     const mbdugetRef = useRef()
+    const { signup } = useAuth ()
+    const [loading, setLoading] = useState(false);
+    const history = useHistory()
+
+    async function handleSubmit(e){
+        e.preventDefault()
+
+        setLoading(true);
+      
+        await signup(usernameRef.current.value, emailRef.current.value, passwordRef.current.value)
+        history.push("/")
+      
+        setLoading(false);
+
+    }
 
 
   return (
@@ -21,7 +38,7 @@ export default function Signup() {
         <Card>
             <Card.Body>
                 <h2 className = "text-center mb-4">REGISTER</h2>
-                <Form>
+                <Form onSubmit= {handleSubmit}>
                     <Form.Group id ="username">
                     <Form.Label>Username: </Form.Label>
                     <Form.Control type = "text" ref={usernameRef} required />
@@ -39,7 +56,7 @@ export default function Signup() {
 
                     <Form.Group id ="occupation">
                     <Form.Label>Occupation Type: </Form.Label>
-                    <Form.Select ref={passwordRef} required>
+                    <Form.Select ref={occupationRef} required>
                         <option value =""></option>
                         <option value ="student">Student</option>
                         <option value ="employed">Employed</option>
@@ -49,7 +66,7 @@ export default function Signup() {
                     </Form.Group>
                     <Form.Group id ="purchasef">
                     <Form.Label>Purchase Frequency: </Form.Label>
-                    <Form.Select ref={passwordRef} required>
+                    <Form.Select ref={purchasefRef} required>
                         <option value =""></option>
                         <option value ="low spender">Low Spender</option>
                         <option value ="moderate spender">Average Spender</option>
@@ -61,12 +78,15 @@ export default function Signup() {
                     <Form.Label>Monthly Budget: </Form.Label>
                     <Form.Control type = "number" ref={mbdugetRef} required />
                     </Form.Group>
-                    <Button className= "w-100 mt-4" type="submit">Sign Up</Button>
+                    <Button disabled={loading} className= "shadow bg-brown-400 hover:bg-brown-600 focus:shadow-outline focus:outline-none text-white font-bold py-2 px-4 rounded w-full w-100 mt-4" type="submit">Sign Up</Button>
                 </Form>
             </Card.Body>
         </Card>
         <div className = "w-100 text-center mt-2">
-            Already have an account? Login
+            Already have an account? {" "}
+                  <Link to="/signin" className="hover:text-black">
+                    Login
+                  </Link>
         </div>
         
     </>
