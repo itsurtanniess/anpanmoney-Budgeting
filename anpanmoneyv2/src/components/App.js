@@ -14,19 +14,20 @@ function App() {
       className="d-flex align-items-center justify-content-center"
       style={{ minHeight: "100vh"}}
     >
+
     <div className="w-100" style={{ maxWidth: "400px" }}>
       <Router> 
         <AuthProvider> 
           <Routes>
-            <Route exact path ="/" element ={Home} />
-            <Route path ="/signup" element ={Signup} />
-            <Route path ="/signin" element ={Signin} />
+            <Route exact path ="/" element = {<Signup/>} />
+            <Route path ="/signup" element = {<Signup/>} />
+            <Route path ="/signin" element = {<Signin/>} />
           </Routes>
         </AuthProvider>
-
       </Router>
-      <Signup/>
+      <Signup />
     </div>
+
     </Container>
   </AuthProvider>
   )
