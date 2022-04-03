@@ -32,9 +32,9 @@ export default function Signup() {
     <>
        
         <center>
-        <div>
-        <img src={Logo} style={{width: '80px', height: '80px'}} alt='react logo' />
-        </div>
+            <div>
+                <img src={Logo} style={{width: '80px', height: '80px'}} alt='react logo' />
+            </div>
         <hr width="100%"></hr>
         </center>
         <Card>
