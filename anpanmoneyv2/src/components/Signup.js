@@ -26,31 +26,36 @@ export default function Signup() {
                     <Form.Label>Username: </Form.Label>
                     <Form.Control type = "text" ref={usernameRef} required />
                     </Form.Group>
+
                     <Form.Group id ="email">
                     <Form.Label>Email: </Form.Label>
                     <Form.Control type = "email" ref={emailRef} required />
                     </Form.Group>
+
                     <Form.Group id ="password">
                     <Form.Label>Password: </Form.Label>
                     <Form.Control type = "password" ref={passwordRef} required />
                     </Form.Group>
+
                     <Form.Group id ="occupation">
                     <Form.Label>Occupation Type: </Form.Label>
-                    <Form.Select>
-                        <option value ="student"></option>
-                        <option value ="employed"></option>
-                        <option value ="unemployed"></option>
+                    <Form.Select ref={passwordRef} required>
+                        <option value =""></option>
+                        <option value ="student">Student</option>
+                        <option value ="employed">Employed</option>
+                        <option value ="unemployed">Unemployed</option>
                     </Form.Select>
-                    <Form.Control type = "select" ref={occupationRef} required />
+                    
                     </Form.Group>
                     <Form.Group id ="purchasef">
                     <Form.Label>Purchase Frequency: </Form.Label>
-                    <Form.Select>
-                        <option value ="low spender"></option>
-                        <option value ="moderate spender"></option>
-                        <option value ="high spender"></option>
+                    <Form.Select ref={passwordRef} required>
+                        <option value =""></option>
+                        <option value ="low spender">Low Spender</option>
+                        <option value ="moderate spender">Average Spender</option>
+                        <option value ="high spender">High Spender</option>
                     </Form.Select>
-                    <Form.Control type = "select" ref={purchasefRef} required />
+                    
                     </Form.Group>
                     <Form.Group id ="mbudget">
                     <Form.Label>Monthly Budget: </Form.Label>
