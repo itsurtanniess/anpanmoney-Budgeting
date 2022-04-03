@@ -11,6 +11,10 @@ export default function Signup() {
 
   return (
     <>
+        <div>
+        <Head>
+        <title>Sign Up | Anpanmoney</title>
+       </Head>
         <center>
         <img src={img1} alt="" width="190" length="290"/>
         <hr width="100%"></hr>
@@ -41,6 +45,7 @@ export default function Signup() {
         </Card>
         <div className = "w-100 text-center mt-2">
             Already have an account? Login
+        </div>
         </div>
     </>
   )
