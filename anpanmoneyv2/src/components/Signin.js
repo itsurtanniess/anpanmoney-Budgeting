@@ -1,8 +1,8 @@
 import React, { useRef, useState } from "react";
-import { Form, Button, Card } from "react-bootstrap";
+import { Form, Button, Card, Alert} from "react-bootstrap";
 import img1 from "./images/logo.png";
 import { useAuth } from "../context/AuthContext";
-import { Link, useHistory } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 
 export default function Signin() {
   const emailRef = useRef();
@@ -10,7 +10,7 @@ export default function Signin() {
   const { signin } = useAuth();
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("")
-  const history = useHistory()
+  const navigate = useNavigate()
 
 
   async function handleSubmit(e) {
@@ -21,7 +21,7 @@ export default function Signin() {
         setLoading(true);
 
         await signin(emailRef.current.value, passwordRef.current.value);
-        history.push("/")
+        navigate.push("/")
     }catch{
         setError("Failed to log in")
     }
@@ -37,6 +37,7 @@ export default function Signin() {
       <Card>
         <Card.Body>
           <h2 className="text-center mb-4">REGISTER</h2>
+          {error && <Alert variant= "danger">{error}</Alert>}
           <Form onSubmit={handleSubmit}>
             <Form.Group id="email">
               <Form.Label>Email: </Form.Label>

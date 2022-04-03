@@ -2,7 +2,7 @@ import React, {useRef, useState} from 'react'
 import {Form, Button, Card} from 'react-bootstrap'
 import img1 from "./images/logo.png";
 import {useAuth} from '../context/AuthContext'
-import { Link, useHistory } from 'react-router-dom'
+import { Link, useNavigate } from 'react-router-dom'
 
 export default function Signup() {
     const usernameRef = useRef()
@@ -13,7 +13,7 @@ export default function Signup() {
     const mbdugetRef = useRef()
     const { signup } = useAuth ()
     const [loading, setLoading] = useState(false);
-    const history = useHistory()
+    const navigate = useNavigate()
 
     async function handleSubmit(e){
         e.preventDefault()
@@ -21,7 +21,7 @@ export default function Signup() {
         setLoading(true);
       
         await signup(usernameRef.current.value, emailRef.current.value, passwordRef.current.value)
-        history.push("/")
+        navigate.push("/")
       
         setLoading(false);
 
