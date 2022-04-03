@@ -6,15 +6,14 @@ export default function Signup() {
     const usernameRef = useRef()
     const emailRef = useRef()
     const passwordRef = useRef()
+    const occupationRef = useRef()
+    const purchasefRef = useRef()
     const mbdugetRef = useRef()
 
 
   return (
     <>
-        <div>
-        <Head>
-        <title>Sign Up | Anpanmoney</title>
-       </Head>
+       
         <center>
         <img src={img1} alt="" width="190" length="290"/>
         <hr width="100%"></hr>
@@ -35,6 +34,24 @@ export default function Signup() {
                     <Form.Label>Password: </Form.Label>
                     <Form.Control type = "password" ref={passwordRef} required />
                     </Form.Group>
+                    <Form.Group id ="occupation">
+                    <Form.Label>Occupation Type: </Form.Label>
+                    <Form.Select>
+                        <option value ="student"></option>
+                        <option value ="employed"></option>
+                        <option value ="unemployed"></option>
+                    </Form.Select>
+                    <Form.Control type = "select" ref={occupationRef} required />
+                    </Form.Group>
+                    <Form.Group id ="purchasef">
+                    <Form.Label>Purchase Frequency: </Form.Label>
+                    <Form.Select>
+                        <option value ="low spender"></option>
+                        <option value ="moderate spender"></option>
+                        <option value ="high spender"></option>
+                    </Form.Select>
+                    <Form.Control type = "select" ref={purchasefRef} required />
+                    </Form.Group>
                     <Form.Group id ="mbudget">
                     <Form.Label>Monthly Budget: </Form.Label>
                     <Form.Control type = "number" ref={mbdugetRef} required />
@@ -46,7 +63,7 @@ export default function Signup() {
         <div className = "w-100 text-center mt-2">
             Already have an account? Login
         </div>
-        </div>
+        
     </>
   )
 }
