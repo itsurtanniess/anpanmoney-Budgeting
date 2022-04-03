@@ -21,7 +21,7 @@ export default function Signup() {
         </center>
         <Card>
             <Card.Body>
-                <h2 className = "text-center mb-4">Signup</h2>
+                <h2 className = "text-center mb-4">REGISTER</h2>
                 <Form>
                     <Form.Group id ="username">
                     <Form.Label>Username: </Form.Label>
@@ -39,7 +39,7 @@ export default function Signup() {
                     <Form.Label>Monthly Budget: </Form.Label>
                     <Form.Control type = "number" ref={mbdugetRef} required />
                     </Form.Group>
-                    <Button className= "w-100 mt-4" type="submit"> Sign Up</Button>
+                    <Button className= "w-100 mt-4" type="submit">Sign Up</Button>
                 </Form>
             </Card.Body>
         </Card>
