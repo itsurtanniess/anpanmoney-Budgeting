@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import {Form, Button, Card} from 'react-bootstrap'
-import img1 from "./images/logo.png";
+import img1 from "./images/logo.png"
 import {useAuth} from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 
