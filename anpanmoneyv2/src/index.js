@@ -12,7 +12,7 @@ import App from "./components/App";
 // const root = ReactDOM.createRoot(document.getElementById("root"));
 // root.render(<App />);
 
-const container = document.getElementById('App');
+const container = document.getElementById('root');
 
 // Create a root.
 const root = ReactDOMClient.createRoot(container);
