@@ -1,6 +1,6 @@
 import React, {useRef, useState} from 'react'
 import {Form, Button, Card} from 'react-bootstrap'
-import img1 from "./images/logo.png"
+import Logo from "./images/logo.png"
 import {useAuth} from '../context/AuthContext'
 import { Link, useNavigate } from 'react-router-dom'
 
@@ -32,7 +32,9 @@ export default function Signup() {
     <>
        
         <center>
-        <img src={img1} alt="" width="190" length="290"/>
+        <div>
+        <img src={Logo} style={{width: '80px', height: '80px'}} alt='react logo' />
+        </div>
         <hr width="100%"></hr>
         </center>
         <Card>
